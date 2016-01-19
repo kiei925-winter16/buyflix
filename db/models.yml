@@ -1,0 +1,18 @@
+# Types can be integer, string, text, or boolean (there are others but not typically used).
+Movie:
+  name: string
+  image: string
+  summary: text
+  year_released: string
+  studio_id: integer
+
+Studio:
+  name: string
+
+Actor:
+  name: string
+
+Role:
+  movie_id: integer
+  actor_id: integer
+  character_name: string
