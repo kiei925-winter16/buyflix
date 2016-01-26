@@ -1,0 +1,11 @@
+<h1><%= @movie.name %></h1>
+<p><%= @movie.summary %></p>
+<p>Year: <%= @movie.year_released %></p>
+<p>Produced By: <%= @studio.name %></p>
+
+<ul>
+  <% @roles.each do |role| %>
+    <li><%= Actor.find_by(id: role.actor_id).name %>
+    as <%= role.character_name %></li>
+  <% end %>
+</ul>

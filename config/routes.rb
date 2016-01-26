@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/hello', to: 'hello#index'
   get '/movies', to: 'movies#index'
   get '/movies/new', to: 'movies#new'
   post '/movies', to: 'movies#create'
