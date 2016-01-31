@@ -15,11 +15,11 @@ marvel = Studio.create(name: "Marvel")
 
 # Create the movies
 puts "Creating movies..."
-raiders = Movie.create(studio_id: paramount.id, image: "raiders.jpg", name: "Raiders of the Lost Ark", summary: "Archaeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis.", year_released: "1981")
-star_wars = Movie.create(studio_id: lucasfilm.id, image: "starwars.jpg", name: "Star Wars", summary: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.", year_released: "1977")
-apollo_13 = Movie.create(studio_id: universal.id, image: "apollo13.jpg", name: "Apollo 13", summary: "NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage putting the lives of the three astronauts on board in jeopardy.", year_released: "1995")
-cast_away = Movie.create(studio_id: fox.id, image: "castaway.jpg", name: "Cast Away", summary: "A FedEx executive must transform himself physically and emotionally to survive a crash landing on a deserted island.", year_released: "2000")
-guardians = Movie.create(studio_id: marvel.id, image: "guardians.jpg", name: "Guardians of the Galaxy", summary: "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.", year_released: "2014")
+raiders = Movie.create(studio_id: paramount.id, name: "Raiders of the Lost Ark", image: "raiders.jpg", summary: "Archaeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis.", year_released: "1981", rating: "PG", genre: "Action", runtime: "115 min", price: 1299)
+star_wars = Movie.create(studio_id: lucasfilm.id, name: "Star Wars", image: "starwars.jpg", summary: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.", year_released: "1977", rating: "PG", genre: "Action", runtime: "121 min", price: 1499)
+apollo_13 = Movie.create(studio_id: universal.id, name: "Apollo 13", image: "apollo13.jpg", summary: "NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage putting the lives of the three astronauts on board in jeopardy.", year_released: "1995", rating: "PG", genre: "Drama", runtime: "140 min", price: 1299)
+cast_away = Movie.create(studio_id: fox.id, name: "Cast Away", image: "castaway.jpg", summary: "A FedEx executive must transform himself physically and emotionally to survive a crash landing on a deserted island.", year_released: "2000", rating: "PG-13", genre: "Drama", runtime: "143 min", price: 1099)
+guardians = Movie.create(studio_id: marvel.id, name: "Guardians of the Galaxy", image: "guardians.jpg", summary: "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.", year_released: "2014", rating: "PG-13", genre: "Action", runtime: "121 mins", price: 1499)
 
 # Create the actors
 puts "Creating actors..."

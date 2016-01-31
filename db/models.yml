@@ -1,10 +1,16 @@
-# Types can be integer, string, text, or boolean (there are others but not typically used).
 Movie:
   name: string
   image: string
   summary: text
   year_released: string
+  rating: string
+  genre: string
+  runtime: string
+  format: string
+  price: integer
   studio_id: integer
+  created_at: datetime
+  updated_at: datetime
 
 Studio:
   name: string

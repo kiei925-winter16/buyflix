@@ -1,11 +1,48 @@
-<h1><%= @movie.name %></h1>
-<p><%= @movie.summary %></p>
-<p>Year: <%= @movie.year_released %></p>
-<p>Produced By: <%= @studio.name %></p>
+<!-- Use view helpers (e.g. link_to and image_tag) -->
+<!-- and implement real data -->
 
-<ul>
-  <% @roles.each do |role| %>
-    <li><%= Actor.find_by(id: role.actor_id).name %>
-    as <%= role.character_name %></li>
-  <% end %>
-</ul>
+<h1 class="title">
+  Guardians of the Galaxy
+  <span class="rating">PG-13</span>
+</h1>
+
+<div class="row">
+  <div class="col-md-3 text-center">
+    <p><img src="/assets/guardians.jpg"></p>
+    <p><a href="#" class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i> $14.99 Buy in HD</a></p>
+    <p><strong>Genre:</strong> Action</p>
+    <p><strong>Released:</strong> 2014</p>
+  </div>
+  <div class="col-md-4 summary">
+    <h2>Summary</h2>
+    <p>
+      A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.
+    </p>
+  </div>
+  <div class="col-md-3 actors">
+    <h2>Cast</h2>
+    <ul class="list-unstyled">
+      <li>Chris Pratt as Peter Quill</li>
+      <li>Zoe Saldana as Gamora</li>
+      <li>Dave Bautista as Drax</li>
+      <li>Vin Diesel as Groot</li>
+      <li>Bradley Cooper as Rocket</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-3 reviews">
+    <h2 class="page-header">Information</h2>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <td><strong>Studio</strong></td>
+        <td>Marvel</td>
+      </tr>
+      <tr>
+        <td><strong>Run Time</strong></td>
+        <td>121 mins</td>
+      </tr>
+    </table>
+  </div>
+</div>
