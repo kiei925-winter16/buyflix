@@ -2,31 +2,29 @@
 <!-- and implement real data -->
 
 <h1 class="title">
-  Guardians of the Galaxy
-  <span class="rating">PG-13</span>
+  <%= @movie.name %>
+  <span class="rating"><%= @movie.rating %></span>
 </h1>
 
 <div class="row">
   <div class="col-md-3 text-center">
-    <p><img src="/assets/guardians.jpg"></p>
-    <p><a href="#" class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i> $14.99 Buy in HD</a></p>
-    <p><strong>Genre:</strong> Action</p>
-    <p><strong>Released:</strong> 2014</p>
+    <p><%= image_tag @movie.image %></p>
+    <p><a href="#" class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i> $<%= @movie.price.to_f / 100 %> Buy in HD</a></p>
+    <p><strong>Genre:</strong> <%= @movie.genre %></p>
+    <p><strong>Released:</strong> <%= @movie.year_released %></p>
   </div>
   <div class="col-md-4 summary">
     <h2>Summary</h2>
     <p>
-      A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.
+      <%= @movie.summary %>
     </p>
   </div>
   <div class="col-md-3 actors">
     <h2>Cast</h2>
     <ul class="list-unstyled">
-      <li>Chris Pratt as Peter Quill</li>
-      <li>Zoe Saldana as Gamora</li>
-      <li>Dave Bautista as Drax</li>
-      <li>Vin Diesel as Groot</li>
-      <li>Bradley Cooper as Rocket</li>
+      <% @roles.each do |role| %>
+        <li><%= Actor.find_by(id: role.actor_id).name %> as <%= role.character_name %></li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -37,11 +35,11 @@
     <table class="table table-striped table-bordered">
       <tr>
         <td><strong>Studio</strong></td>
-        <td>Marvel</td>
+        <td><%= @studio.name %></td>
       </tr>
       <tr>
         <td><strong>Run Time</strong></td>
-        <td>121 mins</td>
+        <td><%= @movie.runtime %></td>
       </tr>
     </table>
   </div>
