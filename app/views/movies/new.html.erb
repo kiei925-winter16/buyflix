@@ -4,6 +4,10 @@
     <%= form.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= form.label :image %>
+    <%= form.text_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= form.label :summary %>
     <%= form.text_area :summary, class: "form-control" %>
   </div>
@@ -14,6 +18,26 @@
   <div class="form-group">
     <%= form.label :rating %>
     <%= form.text_field :rating, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :genre %>
+    <%= form.text_field :genre, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :runtime %>
+    <%= form.text_field :runtime, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :format %>
+    <%= form.text_field :format, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :studio_id %>
+    <%= form.text_field :studio_id, class: "form-control" %>
   </div>
   <%= form.button 'Create Movie', class: "btn btn-success" %>
 <% end %>
