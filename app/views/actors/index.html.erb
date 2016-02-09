@@ -9,7 +9,10 @@
   <% @actors.each do |actor| %>
     <li>
       <%= link_to actor.name, edit_actor_url(actor) %>
-      <%= link_to "Delete", actor_url(actor), method: :delete %>
+      <%= link_to "Delete", 
+            actor_url(actor), 
+            method: :delete,
+            data: { confirm: 'No, really?!' } %>
     </li>
   <% end %>
 </ul>

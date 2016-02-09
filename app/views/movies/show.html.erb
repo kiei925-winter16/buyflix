@@ -22,8 +22,12 @@
   <div class="col-md-3 actors">
     <h2>Cast</h2>
     <ul class="list-unstyled">
-      <% @roles.each do |role| %>
-        <li><%= Actor.find_by(id: role.actor_id).name %> as <%= role.character_name %></li>
+      <% @movie.roles.each do |role| %>
+        <% if role.actor %>
+          <li><%= role.actor.name %> as <%= role.character_name %></li>
+        <% else %>
+          <li>OH NOES!!!!</li>
+        <% end %>
       <% end %>
     </ul>
   </div>
@@ -35,7 +39,7 @@
     <table class="table table-striped table-bordered">
       <tr>
         <td><strong>Studio</strong></td>
-        <td><%= @studio.name %></td>
+        <td><%= @movie.studio.name %></td>
       </tr>
       <tr>
         <td><strong>Run Time</strong></td>

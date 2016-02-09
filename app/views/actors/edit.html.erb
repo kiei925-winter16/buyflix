@@ -1,7 +1,4 @@
-<%= form_for @actor do |form| %>
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-  <%= form.button 'Update Actor', class: "btn btn-success" %>
+<%= bootstrap_form_for @actor do |form| %>
+  <%= form.text_field :name %>
+  <%= form.button 'Save Actor', class: "btn btn-success" %>
 <% end %>
