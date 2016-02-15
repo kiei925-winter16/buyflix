@@ -4,6 +4,7 @@ Studio.delete_all
 Movie.delete_all
 Actor.delete_all
 Role.delete_all
+User.delete_all
 
 # Create the studios
 puts "Creating studios..."
@@ -56,4 +57,7 @@ Role.create(movie_id: guardians.id, actor_id: dave.id, character_name: "Drax")
 Role.create(movie_id: guardians.id, actor_id: vin.id, character_name: "Groot")
 Role.create(movie_id: guardians.id, actor_id: bradley.id, character_name: "Rocket")
 
-puts "There are now #{Studio.count} studios, #{Movie.count} movies, #{Actor.count} actors, and #{Role.count} roles in the database."
+# Create users
+User.create(name: "Brian", email: "brian@brianeng.com", password: "secret")
+
+puts "There are now #{Studio.count} studios, #{Movie.count} movies, #{Actor.count} actors, #{Role.count} roles, and #{User.count} users in the database."
