@@ -22,3 +22,8 @@ Role:
   movie_id: integer
   actor_id: integer
   character_name: string
+
+User:
+  name: string
+  email: string
+  password: string

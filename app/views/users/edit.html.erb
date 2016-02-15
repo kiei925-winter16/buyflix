@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @user do |form| %>
+  <%= form.text_field :email %>
+  <%= form.password_field :password %>
+  <%= form.text_field :name %>
+  <%= form.button 'Update User', class: "btn btn-success" %>
+<% end %>
