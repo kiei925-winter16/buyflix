@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate, only: [:new, :create]
 
   def index
     @users = User.all
@@ -14,7 +15,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params[:user])
-    redirect_to users_path
+    if @user.valid?
+      redirect_to users_path, notice: "Yay!!!"
+    else
+      render "new"
+    end
   end
 
   def edit
