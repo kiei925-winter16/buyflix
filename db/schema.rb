@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "image"
     t.text     "summary"
     t.string   "year_released"
-    t.integer  "studio_id"
     t.string   "rating"
     t.string   "genre"
     t.string   "runtime"
     t.string   "format"
     t.integer  "price"
+    t.integer  "studio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "role"
   end
 
 end

@@ -2,5 +2,6 @@
   <%= form.text_field :email %>
   <%= form.password_field :password %>
   <%= form.text_field :name %>
+  <%= form.select :role, ["admin", "user"] %>
   <%= form.button 'Update User', class: "btn btn-success" %>
 <% end %>

@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
     if @user.present?
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to root_url, notice: 'Yeah'
+        redirect_to root_url, notice: "You're now logged-in"
       else
-        redirect_to root_url, alert: 'Invalid Password'
+        redirect_to root_url, alert: "Invalid Password"
       end
     else
-      redirect_to root_url, alert: 'Nobody with that email address'
+      redirect_to root_url, alert: "Nobody with that email address"
     end
   end
   
