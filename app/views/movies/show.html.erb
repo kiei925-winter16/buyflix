@@ -39,7 +39,7 @@
     <table class="table table-striped table-bordered">
       <tr>
         <td><strong>Studio</strong></td>
-        <td><%= @movie.studio.name %></td>
+        <td><%= @movie.studio.try(:name) %></td>
       </tr>
       <tr>
         <td><strong>Run Time</strong></td>

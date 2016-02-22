@@ -1,13 +1,4 @@
 <%= bootstrap_form_for @movie do |form| %>
   <%= form.text_field :name %>
-  <%= form.text_field :image %>
-  <%= form.text_area :summary %>
-  <%= form.text_field :year_released %>
-  <%= form.text_field :rating %>
-  <%= form.text_field :genre %>
-  <%= form.text_field :runtime %>
-  <%= form.text_field :format %>
-  <%= form.text_field :price %>
-  <%= form.collection_select :studio_id, Studio.all, :id, :name, include_blank: true %>
   <%= form.button 'Create Movie', class: "btn btn-success" %>
 <% end %>

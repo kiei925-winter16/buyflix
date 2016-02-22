@@ -7,6 +7,9 @@ body {
   color: #ff3061;
   padding-top: 20px;
 }
+.thumbnail a>img, .thumbnail>img, img {
+  height: 317px;
+}
 h1.title {
   padding: 0 30px 30px 0;
 }
