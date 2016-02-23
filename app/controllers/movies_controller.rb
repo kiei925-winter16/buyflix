@@ -14,7 +14,17 @@ class MoviesController < ApplicationController
   end
   
   def create
-    Movie.create(params[:movie])
+    @movie = Movie.new
+    omdb = OMDB.title(params[:movie][:name])
+    @movie.name = omdb.title
+    @movie.summary = omdb.plot
+    @movie.rating = omdb.rated
+    @movie.runtime = omdb.runtime
+    @movie.year_released = omdb.year
+    @movie.genre = omdb.genre
+    @movie.image = omdb.poster
+    @movie.format = "Widescreen"
+    @movie.save
     redirect_to movies_url
   end
   
