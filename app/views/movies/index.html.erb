@@ -11,7 +11,7 @@
         <div class="caption">
           <h3><%= link_to movie.name, movie_url(movie) %></h3>
           <p><%= movie.summary %></p>
-          <% if current_user %>
+          <% if current_user && current_user.role == "admin" %>
             <p>
               <%= link_to "Edit", edit_movie_path(movie), class: "btn btn-default" %>
               <%= link_to "Delete", movie_path(movie), 

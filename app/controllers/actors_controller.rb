@@ -1,7 +1,11 @@
 class ActorsController < ApplicationController
 
   def index
-    @actors = Actor.all
+    if current_user.role == 'admin'
+      @actors = Actor.all
+    else
+      render text: "Sorry"
+    end
   end
   
   def show
