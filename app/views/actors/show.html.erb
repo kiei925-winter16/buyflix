@@ -1,5 +1,5 @@
-<% if File.exists? Rails.root.join("public", "images", "#{@actor.id}.jpg") %>
-  <%= image_tag "/images/#{@actor.id}.jpg" %>
+<% if @actor.image.present? %>
+  <%= image_tag "data:image/*;base64,#{@actor.image}" %> 
 <% end %>
 
 <h3><%= @actor.name %></h3>

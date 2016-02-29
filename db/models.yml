@@ -16,6 +16,7 @@ Studio:
 
 Actor:
   name: string
+  image: text
 
 Genre:
   name: string

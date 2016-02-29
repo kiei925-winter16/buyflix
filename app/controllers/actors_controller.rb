@@ -20,9 +20,8 @@ class ActorsController < ApplicationController
   def create
     @actor = Actor.new
     @actor.name = params[:actor][:name]
-    if @actor.save
-      upload_photo
-    end
+    upload_photo
+    @actor.save
     redirect_to actors_url
   end
   
@@ -33,9 +32,8 @@ class ActorsController < ApplicationController
   def update
     @actor = Actor.find_by(id: params[:id])
     @actor.name = params[:actor][:name]
-    if @actor.save
-      upload_photo
-    end
+    upload_photo
+    @actor.save
     redirect_to actors_url
   end
   
@@ -49,13 +47,7 @@ class ActorsController < ApplicationController
     # read the uploaded file
     file = params[:actor][:photo]
     if file.present?
-      file_data = file.read
-
-      # write the uploaded file to a new file somewhere
-      the_file = Rails.root.join("public", "images", "#{@actor.id}.jpg")
-      File.open(the_file, "wb") do |f|
-        f.write(file_data)
-      end
+      @actor.image = Base64.encode64(params[:actor][:photo].read)
     end
   end
 

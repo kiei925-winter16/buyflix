@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
+    t.text   "image"
   end
 
   create_table "categorizations", force: :cascade do |t|
