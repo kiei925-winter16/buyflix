@@ -17,17 +17,28 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name"
   end
 
+  create_table "categorizations", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "genre_id"
+  end
+
+  add_index "categorizations", ["genre_id"], name: "index_categorizations_on_genre_id"
+  add_index "categorizations", ["movie_id"], name: "index_categorizations_on_movie_id"
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
     t.text     "summary"
     t.string   "year_released"
-    t.integer  "studio_id"
     t.string   "rating"
-    t.string   "genre"
     t.string   "runtime"
     t.string   "format"
     t.integer  "price"
+    t.integer  "studio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

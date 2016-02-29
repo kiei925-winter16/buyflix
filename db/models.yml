@@ -4,7 +4,6 @@ Movie:
   summary: text
   year_released: string
   rating: string
-  genre: string
   runtime: string
   format: string
   price: integer
@@ -17,6 +16,13 @@ Studio:
 
 Actor:
   name: string
+
+Genre:
+  name: string
+
+Categorization:
+  movie_id: integer
+  genre_id: integer
 
 Role:
   movie_id: integer

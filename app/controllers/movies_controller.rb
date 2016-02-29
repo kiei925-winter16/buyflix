@@ -21,7 +21,6 @@ class MoviesController < ApplicationController
     @movie.rating = omdb.rated
     @movie.runtime = omdb.runtime
     @movie.year_released = omdb.year
-    @movie.genre = omdb.genre
     @movie.image = omdb.poster
     @movie.format = "Widescreen"
     @movie.save

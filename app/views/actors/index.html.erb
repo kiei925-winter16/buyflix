@@ -8,7 +8,8 @@
 <ul>
   <% @actors.each do |actor| %>
     <li>
-      <%= link_to actor.name, edit_actor_url(actor) %>
+      <%= link_to actor.name, actor %>
+      <%= link_to "Edit", edit_actor_url(actor) %>
       <%= link_to "Delete", 
             actor_url(actor), 
             method: :delete,

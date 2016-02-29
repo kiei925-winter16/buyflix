@@ -10,7 +10,7 @@
   <div class="col-md-3 text-center">
     <p><%= image_tag @movie.image %></p>
     <p><a href="#" class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i> $<%= @movie.price.to_f / 100 %> Buy in HD</a></p>
-    <p><strong>Genre:</strong> <%= @movie.genre %></p>
+    <p><strong>Genre:</strong> <%= @movie.genres_text %></p>
     <p><strong>Released:</strong> <%= @movie.year_released %></p>
   </div>
   <div class="col-md-4 summary">
@@ -23,10 +23,12 @@
     <h2>Cast</h2>
     <ul class="list-unstyled">
       <% @movie.roles.each do |role| %>
-        <% if role.actor %>
-          <li><%= role.actor.name %> as <%= role.character_name %></li>
-        <% else %>
-          <li>OH NOES!!!!</li>
+        <% if role.actor.present? %>
+          <% if role.character_name.present? %>
+            <li><%= link_to role.actor.name, role.actor %> as <%= role.character_name %></li>
+          <% else %>
+            <li><%= link_to role.actor.name, role.actor %></li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
