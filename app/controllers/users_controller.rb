@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
+    @user = User.new(params[:user])
+    @user.role = "user"
+    @user.save
     if @user.valid?
       redirect_to users_path, notice: "Yay!!!"
     else
