@@ -1,12 +1,46 @@
-<!-- Use view helpers (e.g. link_to and image_tag) -->
-<!-- and implement real data -->
+<div id="chart"></div>
 
 <div class="row">
-
   <% @movies.each do |m| %>
-  
     <%= render "shared/movie", movie: m %>
-  
   <% end %>
-
 </div>
+
+<script>
+  $(function () { 
+    $('#chart').highcharts({
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Movie Runtime, 2015'
+      },
+      xAxis: {
+        categories: ['Runtime']
+      },
+      yAxis: {
+        title: {
+          text: 'Minutes'
+        }
+      },
+      legend: {
+        enabled: false
+      },
+      plotOptions: {
+        column: {
+          groupPadding: 1.0
+        }
+      },
+      series: [
+        {
+          name: 'Jane',
+          data: [1, 0, 4]
+        }, 
+        {
+          name: 'John',
+          data: [5, 7, 3]
+        }
+      ]
+    });
+  });
+</script>
